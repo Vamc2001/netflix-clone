@@ -9,7 +9,7 @@ services:
   krishna:
     image: vamc2001/krishna:latest
     ports:
-      - "82:80"
+      - "85:80"
     deploy:
       replicas: 3
   lucky:
