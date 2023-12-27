@@ -1,0 +1,20 @@
+version: '3'
+services:
+  netflix:
+    image: vamc2001/vamshi:v1
+    ports:
+      -  "81:80"
+    deploy:
+      replicas: 3
+  krishna:
+    image: vamc2001/krishna:v1
+    ports:
+      - "82:80"
+    deploy:
+      replicas: 3
+  lucky:
+    image: vamc2001/lucky:v1
+    ports:
+      - "83:80"
+    deploy:
+      replicas: 3
