@@ -7,13 +7,13 @@ services:
     deploy:
       replicas: 3
   krishna:
-    image: vamc2001/krishna:v1
+    image: vamc2001/krishna:v2
     ports:
       - "82:80"
     deploy:
       replicas: 3
   lucky:
-    image: vamc2001/lucky:v1
+    image: vamc2001/lucky:v3
     ports:
       - "83:80"
     deploy:
