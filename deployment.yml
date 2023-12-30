@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vamc
+  labels:
+    run: lucky
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: lucky
+  template:
+    metadata:
+      labels:
+        run: lucky
+    spec:
+      containers:
+        - image: vamc2001/netflix:v1
+          name: cont1
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vamc
+spec:
+  type: LoadBalancer
+  selector:
+    run: lucky
+  ports:
+    - port: 80
+      targetPort: 80
